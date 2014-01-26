@@ -1,0 +1,8 @@
+<h1>Ritly!</h1>
+
+<!-- Need to make hidden field, pass in random URL -->
+<%= form_for :link_code, url: "/go/show" do |f| %>
+	<%= f.text_field :link, placeholder: "Generate Link" %>
+	<%= f.hidden_field :random_string, :value =>SecureRandom.urlsafe_base64(10) %>
+	<%= f.submit "Submit Link" %>
+<% end %>
