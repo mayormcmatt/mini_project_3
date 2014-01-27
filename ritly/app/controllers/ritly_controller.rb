@@ -14,6 +14,12 @@ class RitlyController < ApplicationController
 	def show
 		id = params[:id]
 		@link = Link.find(id)
-	end  
+	end
+
+	def redirect
+		random_code = params[:random_string]
+		code_link = Link.find_by_random_string(random_code)
+		redirect_to code_link.link
+	end
 
 end

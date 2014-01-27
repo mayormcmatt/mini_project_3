@@ -4,6 +4,7 @@
 <div>
 	
 	<div>Your link: <%= @link.link %> </div><br>
-	<div>Link code: <%= @link.random_string %></div>
+	<div>Link code: <%=@link.random_string%></a></div>
+	<div><a href="http://localhost:3000/<%=@link.random_string%>">Click here to visit site, or copy the address and paste it into your address bar</a>
 
 </div>
