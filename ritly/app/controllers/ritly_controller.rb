@@ -1,7 +1,6 @@
 class RitlyController < ApplicationController
 
 	def index
-		# set instance variable with random string gen. in here to pass into hidden form field?
 		render :index
 	end
 
@@ -19,7 +18,7 @@ class RitlyController < ApplicationController
 	def redirect
 		random_code = params[:random_string]
 		code_link = Link.find_by_random_string(random_code)
-		redirect_to code_link.link
+		redirect_to "http://#{code_link.link}"
 	end
 
 end
